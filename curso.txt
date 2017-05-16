@@ -1,0 +1,31 @@
+WebPack:
+
+Instalando módulos:
+npm i --save-dev webpack@1.14.0 webpack-dev-server@1.16.2
+
+- webpack-dev-server --progress --colors --inline --hot
+
+sudo apt-get install nodejs-legacy
+- Precisou no momento de executar o npm run dev
+
+npm run dev
+
+- gerar o bundle.js na pasta public.
+./node_modules/.bin/webpack
+
+
+-- babel fazendo o import/export funcionar
+npm i --save-dev babel-core@6.22.1 babel-loader@6.2.10 babel-preset-es2015@6.22.0
+
+-- babel fazendo o spread funcionar junto com o ES2015
+sudo npm i --save-dev babel-plugin-transform-object-rest-spread@6.22.0
+
+-- babel para reconhecer o comando do javascript.
+npm i --save-dev babel-preset-react@6.22.0
+
+
+#### REACT
+mkdir exercicios_react && cd exercicios_react
+npm init -y
+npm i --save-dev react@15.4.2 react-dom@15.4.2 babel-core@6.22.1 babel-loader@6.2.10 babel-preset-es2015@6.22.0 babel-preset-react@6.22.0 webpack@1.14.0 webpack-dev-server@1.16.2
+
