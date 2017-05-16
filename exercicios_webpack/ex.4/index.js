@@ -1,4 +1,4 @@
-import './estilo.css';
+// ES 2015
 import 'react';
 
 // arrow function
