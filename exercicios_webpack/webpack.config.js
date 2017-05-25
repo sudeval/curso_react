@@ -24,7 +24,7 @@ module.exports = {
         loaders: [{
             test: /.js?$/,
             loader: 'babel-loader',
-            exclude: /node_module/,
+            exclude: /node_modules/,
             query: {
                 // presets do 'react' para ele entender o HTML dentro do .js
                 presets: ['es2015', 'react'],
