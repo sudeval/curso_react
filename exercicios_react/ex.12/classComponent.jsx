@@ -17,7 +17,7 @@ export default class ClassComponent extends Component {
         // para apenas um atributo.
         this.setState( {value: this.state.value + delta} );
 
-        // para casos de mais de um atributo.
+        // para casos de mais de um atributo (primeiro parametro ele clona todo o stado e no segundo ele atualiza o valor da propriedade value.).
         // this.setState( { ...this.state, value: this.state.value + delta} );
     }
 
@@ -33,7 +33,7 @@ export default class ClassComponent extends Component {
             </div>
         )
     }
-    // nao funciona pq estaria passando o resultado da funcao
-    // ele espera uma funcao
+    // nao funciona pq estaria passando o RESULTADO da funcao
+    // ele espera uma FUNCAO
     // <button onClick={this.sum(1)}></button>
 }

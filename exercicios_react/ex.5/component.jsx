@@ -20,12 +20,12 @@ export const Primeiro = props => (
 )
 
 export const Segundo = props => <h1>Segundo  Componente!</h1>
-
-// export {Primeiro, Segundo}
  */
 
 /**
  * 3a maneira de ser feito
+ * deve ser importado com import Primeiro, { Segundo } from './component'
+ * o default vem primeiro e sem as chaves.
  */
 export default props => (
     <h1>Primeiro Componente</h1>

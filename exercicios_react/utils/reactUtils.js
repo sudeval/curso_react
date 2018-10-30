@@ -10,4 +10,5 @@ function childrenWithPropsSimplified(props) {
         child => React.cloneElement(child, {...props}))
 }
 
+// não usou o default para não arrar nenhum como padrão do arquivo utilitario.
 export { childrenWithProps, childrenWithPropsSimplified }
