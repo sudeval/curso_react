@@ -5,13 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // objeto exposto
 // configuracoes
 module.exports = {
+    // entrada
     entry: './ex/index.js',
     output: {
         // saida (gerado o arquivo padrao/unico js)
         path: __dirname + '/public',
         filename: './bundle.js'
     },
-    // servidor web que sera utilizado
+    // servidor web que sera utilizado (webpack-dev-server / poderia ser express)
     devServer: {
         port: 8080,
         contentBase: './public'

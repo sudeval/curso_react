@@ -1,3 +1,7 @@
+npm i (para instalar as dependencias)
+npm run dev (para executar)
+gerar o bundle.js (executar o ./node_modules/.bin/webpack)
+
 WebPack:
 
 Instalando módulos:
