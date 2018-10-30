@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+// plugin para uso do css
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // objeto exposto
@@ -19,7 +20,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('app.css')
     ],
-    // necessário para usar o ES2015 e o browser entender import/export.
+    // babel é necessário para usar o ES2015 e o browser entender import/export.
     module: {
         loaders: [{
             test: /.js?$/,

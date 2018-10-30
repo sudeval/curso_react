@@ -6,6 +6,7 @@ const produto = {
 
 // Usando a funcao spread (...) do ES2015.
 function clone(objeto) {
+    // retorna cada atributo do objeto esperado como um novo objeto
     return { ...objeto};
 }
 

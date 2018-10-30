@@ -1,3 +1,4 @@
+// ES2015
 import React from 'react'
 import ReactDOM from 'react-dom'
 
