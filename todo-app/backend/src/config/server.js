@@ -1,7 +1,10 @@
 const port = 3003
 
+// parser do body da requisicao (transformando em javascript)
 const bodyParser = require('body-parser')
+// servidor web
 const express = require('express')
+// recebe uma instancia para cada vez que é chamado o express()
 const server = express();
 const allowCors = require('./cors')
 

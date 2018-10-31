@@ -8,4 +8,5 @@ Todo.methods(['get', 'post', 'put', 'delete'])
 //                  o padrão é não validar (wtf)
 Todo.updateOptions({new: true, runValidators: true})
 
+// O node-restful encapsula as chamadas do rest (web / express) e do mongo
 module.exports = Todo
