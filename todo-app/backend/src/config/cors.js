@@ -6,6 +6,6 @@ module.exports = function(request, response, next) {
     response.header('Access-Control-Allow-Origin', '*')
     response.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
     response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-    // continuar o fluxo (chain of responsability)
+    // continuar o fluxo (chain of responsability que o express usa)
     next()
 }
