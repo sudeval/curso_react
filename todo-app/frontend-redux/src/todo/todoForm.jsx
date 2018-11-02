@@ -11,7 +11,7 @@ import {changeDescription, search} from './todoAction'
 // a action search
 class TodoForm extends Component {
 
-    constructor() {
+    constructor(props) {
         super(props)
         this.keyHandler = this.keyHandler.bind(this)
     }
@@ -20,7 +20,7 @@ class TodoForm extends Component {
         if (e.key === 'Enter') {
             e.shiftKey ? this.props.handleSearch() : this.props.handleAdd()
         } else if (e.key === 'Escape') {
-            props.handleClear()
+            this.props.handleClear()
         }
     }
 

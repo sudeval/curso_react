@@ -16,4 +16,5 @@ export const search = () => {
     }
     // temos um problema nessa versao, pois o axios.get retorna uma promisse (then) e as funcoes
     // da action creator (ex. search) deve ser sincrona
+    // necessario o uso de um middleware (redux-promise)
 }
