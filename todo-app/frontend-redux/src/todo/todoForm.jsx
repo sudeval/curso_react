@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux'
 import Grid from '../template/grid'
 import IconButton from '../template/iconButton'
 
-import {changeDescription, search} from './todoAction'
+import {changeDescription, search, add} from './todoAction'
 
 // necessário transformar em componente para utilizar a funcao willMount e executar
 // a action search
@@ -17,8 +17,10 @@ class TodoForm extends Component {
     }
 
     keyHandler(e) {
+        // desctructure (remove as funcoes ou propriedades de props)
+        const {search, add, description} = this.props;
         if (e.key === 'Enter') {
-            e.shiftKey ? this.props.handleSearch() : this.props.handleAdd()
+            e.shiftKey ? search(description) : add()
         } else if (e.key === 'Escape') {
             this.props.handleClear()
         }
@@ -32,6 +34,7 @@ class TodoForm extends Component {
     }
 
     render() {
+        const {search, add, description} = this.props;
         return (
             <div role='form' className='todoForm'>
                 <Grid cols='12 9 10'>
@@ -44,9 +47,9 @@ class TodoForm extends Component {
         
                 <Grid cols='12 3 2'>
                     <IconButton style='primary' icon='plus'
-                        onClick={this.props.handleAdd}></IconButton>
+                        onClick={() => add(description)}></IconButton>
                     <IconButton style='info' icon='search'
-                        onClick={this.props.handleSearch}></IconButton>
+                        onClick={() => search(description)}></IconButton>
                     <IconButton style='default' icon='close'
                         onClick={this.props.handleClear}></IconButton>
                 </Grid>
@@ -59,5 +62,5 @@ class TodoForm extends Component {
 // nome da propriedade no props (description)
 const mapStateToProps = state => ({description: state.todo.description})
 // cara que dispara a ação e manda para o reducers
-const mapDispatchToProps = dispatch => bindActionCreators({changeDescription, search}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({changeDescription, search, add}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

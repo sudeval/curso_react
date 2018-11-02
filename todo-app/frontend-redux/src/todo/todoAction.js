@@ -18,3 +18,13 @@ export const search = () => {
     // da action creator (ex. search) deve ser sincrona
     // necessario o uso de um middleware (redux-promise)
 }
+
+export const add = (description) => {
+    const request = axios.post(URL, {description})
+    return {
+        type: "TODO_ADDED",
+        payload: request
+    }
+    // existe a necessidade de disparar o search tb no caso de sucesso do adicionar (recarregar a lista)
+    // TODO modificar para um multiplo promise
+}
