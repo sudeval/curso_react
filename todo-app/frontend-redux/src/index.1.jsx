@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom'
 import {applyMiddleware, createStore} from 'redux'
 import {Provider} from 'react-redux'
 import promise from 'redux-promise'
-import multi from 'redux-multi'
-import thunk from 'redux-thunk'
 
 import App from './main/app'
 import reducers from './main/reducers'
@@ -13,8 +11,9 @@ import reducers from './main/reducers'
 // usando o dev tools
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
-// estado da nossa aplicacao e alguns middlewares de promise (thunk, multi e promise)
-const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools)
+// estado da nossa aplicacao
+// const store = createStore(reducers, devTools) // versao sem o promise/middleware
+const store = applyMiddleware(promise)(createStore)(reducers, devTools)
 ReactDOM.render(
     <Provider store={store}>
         <App />

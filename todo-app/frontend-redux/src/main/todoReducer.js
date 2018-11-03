@@ -6,11 +6,17 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, description: action.payload}
         case 'TODO_SEARCHED':
             return {...state, list: action.payload.data}
-        case 'TODO_ADDED': {
+        case 'TODO_CLEAR': {
+            // limpando o texto digitado
             return {...state, description: ''}
-            // limpando o texto digitido
         }
         default:
             return state;
     }
 }
+
+// nao faz mais sentido ter o adicionar apenas para limpar
+/* case 'TODO_ADDED': {
+    // limpando o texto digitado
+    return {...state, description: ''}
+} */
