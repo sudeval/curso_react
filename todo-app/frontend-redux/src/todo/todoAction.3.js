@@ -9,16 +9,11 @@ export const changeDescription = event => ({
 
 
 export const search = () => {
-    // nao é bom ficar pegando o estado na action, apenas se for o jeito mesmo :P
-    // o thunk (novamente ;) fornece um metodo que recebe um dispatch e o estado
-    return (dispatch, getState) => {
-        const description = getState().todo.description
-        const search = description ? `&description__regex=/${description}/`: ''
-        const request = axios.get(`${URL}?sort=-createdAt${search}`)
-            .then(resp => dispatch({type: 'TODO_SEARCHED', payload: resp.data}))
+    const request = axios.get(`${URL}?sort=-createdAt`)
+    return {
+        type: 'TODO_SEARCHED',
+        payload: request
     }
-    // nessa versao o payload ja recebe o 'data' e nao mais a request para o middleware promise resolver
-    // ou seja, vai ter modificacao no reducers tb.
 }
 
 export const add = (description) => {
@@ -28,7 +23,7 @@ export const add = (description) => {
         // promise (adicionar)
         axios.post(URL, {description})
         .then(resp => dispatch(clear()))
-        // .then(resp => dispatch(search())) a nova versao do clear chama essa ação
+        .then(resp => dispatch(search()))
     }
     // garantindo a ordem as promises (com os then)
     // lembrando que DISPATCH é o cara que envia a action para os REDUCERS
@@ -57,7 +52,6 @@ export const remove = todo => {
     }
 }
 
-export const clear = event => {
-    // utilizando o middleware multi para que o limpar tb chame o pesquisar.
-    return [{ type: 'TODO_CLEAR' }, search()]
-}
+export const clear = event => (
+    { type: 'TODO_CLEAR' }
+)

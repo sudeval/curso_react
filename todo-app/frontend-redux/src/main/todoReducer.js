@@ -4,8 +4,12 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'DESCRIPTION_CHANGED':
             return {...state, description: action.payload}
-        case 'TODO_SEARCHED':
-            return {...state, list: action.payload.data}
+        case 'TODO_SEARCHED': {
+            // versao em que era utilizada o middleware promise (payload.data)
+            // return {...state, list: action.payload.data}
+            // versao com o thunk
+            return {...state, list: action.payload}
+        }
         case 'TODO_CLEAR': {
             // limpando o texto digitado
             return {...state, description: ''}

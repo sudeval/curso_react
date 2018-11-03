@@ -20,7 +20,7 @@ class TodoForm extends Component {
         // desctructure (remove as funcoes ou propriedades de props)
         const {search, add, description, clear} = this.props;
         if (e.key === 'Enter') {
-            e.shiftKey ? search(description) : add()
+            e.shiftKey ? search() : add()
         } else if (e.key === 'Escape') {
             clear()
         }
@@ -49,9 +49,9 @@ class TodoForm extends Component {
                     <IconButton style='primary' icon='plus'
                         onClick={() => add(description)}></IconButton>
                     <IconButton style='info' icon='search'
-                        onClick={() => search(description)}></IconButton>
+                        onClick={search}></IconButton>
                     <IconButton style='default' icon='close'
-                        onClick={() => this.props.clear()}></IconButton>
+                        onClick={this.props.clear}></IconButton>
                 </Grid>
                 
             </div>
