@@ -14,6 +14,7 @@ server.use(bodyParse.urlencoded({extended: true}))
 // server.use('/ola', bodyParse.urlencoded({extended: true}))
 server.use(bodyParse.json())
 server.use(allowCors)
+// transformar as strings para inteiro (skip=0&limite=1)
 server.use(queryParser())
 
 server.listen(port, function(){

@@ -1,4 +1,5 @@
 const BillingCycle = require('./billingCycle')
+const errorHandler = require('../../common/errorHandler')
 
 // post (criar) verifica os campos obrigatorios (required)
 // put (atualizar) ignora essa validacao dos obrigatorios
@@ -8,6 +9,8 @@ BillingCycle.methods(['get', 'post', 'put', 'delete'])
 // para retornar o novo, deve ser definido o new: true
 // runValidators: true é para executar as validações tb no update
 BillingCycle.updateOptions({new:true, runValidators:true})
+// definindo o middleware error handler no post e put
+BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', (req, res, next) => {
     BillingCycle.count((error, value) => {
