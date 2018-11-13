@@ -23,6 +23,7 @@ BillingCycle.route('count', (req, res, next) => {
     })
 })
 
+// _id no group é exigido, nem que seja nulo.
 BillingCycle.route('summary', (req, res, next) => {
     BillingCycle.aggregate({
         $project: { credit: { $sum: "$credits.value" }, debt: { $sum: "$debts.value" } }
