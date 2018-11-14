@@ -7,18 +7,20 @@ import Content from '../common/template/content'
 import Tabs from '../common/tab/tabs'
 import TabsHeader from '../common/tab/tabsHeader'
 import TabsContent from '../common/tab/tabsContent'
-// import TabHeader from '../common/tab/tabHeader'
-// import TabContent from '../common/tab/tabContent'
+import TabHeader from '../common/tab/tabHeader'
+import TabContent from '../common/tab/tabContent'
 // import { init, create, update, remove } from './billingCycleActions'
 
-// import List from './billingCycleList'
+import List from './billingCycleList'
 // import Form from './billingCycleForm'
 
 class BillingCycle extends Component {
 
-    // componentWillMount() {
+    componentWillMount() {
         // this.props.init()
-    // }
+        this.props.selectTab('tabList')
+        this.props.showTabs('tabList', 'tabCreate')
+    }
 
     render() {
         return (
