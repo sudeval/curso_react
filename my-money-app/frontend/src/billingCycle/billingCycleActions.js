@@ -46,6 +46,8 @@ export function showUpdate(billingCycle) {
         selectTab('tabUpdate'),
         initialize('billingCycleForm', billingCycle)
     ]
+    // initialize inicializa o form do criar, mas ele logo em seguinda eh destruido e so
+    // depois o form do atualizar eh criado.
 }
 
 export function showDelete(billingCycle) {
