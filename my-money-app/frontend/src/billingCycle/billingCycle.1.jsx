@@ -18,7 +18,9 @@ import Form from './billingCycleForm'
 class BillingCycle extends Component {
 
     componentWillMount() {
-        this.props.init()
+        // this.props.init()
+        this.props.selectTab('tabList')
+        this.props.showTabs('tabList', 'tabCreate')
     }
 
     render() {
@@ -62,5 +64,4 @@ class BillingCycle extends Component {
 const mapDispatchToProps = dispatch => bindActionCreators({
     selectTab, showTabs, init, create, update, remove
 }, dispatch)
-// pegando propriedades de dentro do estado do redux-form
 export default connect(null, mapDispatchToProps)(BillingCycle)
