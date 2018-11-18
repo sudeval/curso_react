@@ -60,7 +60,6 @@ class BillingCycle extends Component {
 
 // export default BillingCycle
 const mapDispatchToProps = dispatch => bindActionCreators({
-    selectTab, showTabs, init, create, update, remove
+    init, create, update, remove
 }, dispatch)
-// pegando propriedades de dentro do estado do redux-form
 export default connect(null, mapDispatchToProps)(BillingCycle)
