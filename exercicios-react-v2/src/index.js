@@ -8,12 +8,14 @@ import * as serviceWorker from './serviceWorker';
 import PrimeiroComponente from './componentes/PrimeiroComponente'
 import {componenteA as ComponenteA, componenteB as ComponenteB} from './componentes/DoisComponentes'
 import MultiElementos from './componentes/MultiElementos'
+import Contador from './componentes/ContadorComEstado';
 
 const element = document.getElementById('root');
 ReactDOM.render(
     <div>
-    <ComponenteA valor="Oxi"/>
-    <ComponenteB valor="Oxi 2"/>
+            <Contador numeroInicial={100} />
+    {/* <ComponenteA valor="Oxi"/> */}
+    {/* <ComponenteB valor="Oxi 2"/> */}
     </div>, element);
 
 // If you want your app to work offline and load faster, you can change
