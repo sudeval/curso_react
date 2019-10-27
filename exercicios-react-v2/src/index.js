@@ -8,7 +8,8 @@ import * as serviceWorker from './serviceWorker';
 import PrimeiroComponente from './componentes/PrimeiroComponente'
 import {componenteA as ComponenteA, componenteB as ComponenteB} from './componentes/DoisComponentes'
 import MultiElementos from './componentes/MultiElementos'
-import Contador from './componentes/ContadorComEstado';
+/* import Contador from './componentes/ContadorComEstado'; */
+import Contador from './componentes/Hook';
 
 const element = document.getElementById('root');
 ReactDOM.render(
